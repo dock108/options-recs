@@ -34,4 +34,5 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 - Added 'Populate Available Data' button to the daily recommendations form in the frontend. This button fetches current ETF prices, VIX, and market direction from the new backend endpoint `/current-market-data` and auto-fills the form fields.
 - Backend: Added `/current-market-data` endpoint using yfinance to provide latest market data for IWM, XLF, XLE, KRE, VIX, and SPY-based market direction.
-- The Populate Available Data button now also fills in support and resistance levels for each ETF, calculated from the last 5 trading days' highs and lows (simple pivot method). 
+- The Populate Available Data button now also fills in support and resistance levels for each ETF, calculated from the last 5 trading days' highs and lows (simple pivot method).
+- Current market data now includes 50-day moving averages (MA50) for each ETF and the frontend displays this information.
