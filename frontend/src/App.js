@@ -6,10 +6,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const initialEtfs = [
-  { ticker: 'IWM', currentPrice: '', supportPrice: '', resistancePrice: '', ma50: '' },
-  { ticker: 'XLF', currentPrice: '', supportPrice: '', resistancePrice: '', ma50: '' },
-  { ticker: 'XLE', currentPrice: '', supportPrice: '', resistancePrice: '', ma50: '' },
-  { ticker: 'KRE', currentPrice: '', supportPrice: '', resistancePrice: '', ma50: '' },
+  { ticker: 'IWM', currentPrice: '', supportPrice: '', resistancePrice: '' },
+  { ticker: 'XLF', currentPrice: '', supportPrice: '', resistancePrice: '' },
+  { ticker: 'XLE', currentPrice: '', supportPrice: '', resistancePrice: '' },
+  { ticker: 'KRE', currentPrice: '', supportPrice: '', resistancePrice: '' },
 ];
 
 const LOCAL_STORAGE_KEY = 'dashboardFormData';
@@ -142,14 +142,12 @@ function App() {
           const price = etfData.current_price;
           const support = etfData.support;
           const resistance = etfData.resistance;
-          const ma50 = etfData.MA50;
           return data.etfs[etf.ticker]
             ? {
                 ...etf,
                 currentPrice: price !== null && price !== undefined ? price : '',
                 supportPrice: support !== null && support !== undefined ? support : '',
-                resistancePrice: resistance !== null && resistance !== undefined ? resistance : '',
-                ma50: ma50 !== null && ma50 !== undefined ? ma50 : ''
+                resistancePrice: resistance !== null && resistance !== undefined ? resistance : ''
               }
             : etf;
         }));
@@ -301,9 +299,6 @@ function App() {
                     required
                   />
                 </label>
-                {etf.ma50 && (
-                  <div className="ma50-display">MA50: ${etf.ma50}</div>
-                )}
               </div>
             ))}
           </div>
