@@ -175,6 +175,12 @@ input:focus, select:focus {
   color: var(--primary-color);
 }
 
+.ma50-display {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
 /* Recommendations section */
 .recommendations {
   margin-top: 2rem;
